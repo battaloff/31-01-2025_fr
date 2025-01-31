@@ -31,13 +31,24 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'finance'
 ]
+
+UNFOLD = {
+    "SITE_TITLE": "Управление финансами",  # Заголовок админки
+    "SITE_HEADER": "Администрирование",  # Заголовок в шапке
+    "SITE_URL": "/",  # Ссылка на главную страницу
+    "LOGIN_LOGO": None,  # Логотип на странице входа
+    "STYLES": [],  # Дополнительные стили
+    "SCRIPTS": [],  # Дополнительные скрипты
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,7 +65,7 @@ ROOT_URLCONF = 'fr_media_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
